@@ -9,12 +9,11 @@ const Banner = () => {
   const [dots, setActiveDots] = useState(0)
   const settings = {
     dots: true,
-    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     beforeChange: (prev, next) => {
-      setActiveDots({ next, prev });
+      setActiveDots(next);
     },
     appendDots: dots => (
       <div
@@ -27,7 +26,6 @@ const Banner = () => {
           width: '30px',
           borderRight: '3px solid #fff',
           height: 'fit-content',
-
         }}
       >
         <ul>
