@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from './Container'
+import List from './List'
+import ListItem from './ListItem'
 
 const Header = () => {
+    const [showCatagory, setShowCatagory] = useState(false)
+    const handleCatagory = () => {
+        setShowCatagory(!showCatagory);
+    }
   return (
     <div className='bg-secondary'>
         <Container className='flex justify-between py-10'>
-            <div className='flex items-center gap-x-3'>
+            <div onClick={handleCatagory} className='flex items-center gap-x-3 relative'>
                 <div>
                     
                     
@@ -21,6 +27,19 @@ const Header = () => {
                 <div>
                     <p className='text-[14px] text-black font-dm'>Shop by Category</p>
                 </div>
+                {
+                    showCatagory &&
+                    <div className='w-[263px] bg-[#262626] absolute top-[54px] left-0 z-10'>
+                    <List>
+                        <ListItem className='font-dm text-sm text-[#BEBEBE] py-4 pl-5 border-b-[1px] border-[#2D2D2D] duration-300 hover:text-white hover:ml-3' itemName='Accesories'></ListItem>
+                        <ListItem className='font-dm text-sm text-[#BEBEBE] py-4 pl-5 border-b-[1px] border-[#2D2D2D] duration-300 hover:text-white hover:ml-3' itemName='Furniture'></ListItem>
+                        <ListItem className='font-dm text-sm text-[#BEBEBE] py-4 pl-5 border-b-[1px] border-[#2D2D2D] duration-300 hover:text-white hover:ml-3' itemName='Electronics'></ListItem>
+                        <ListItem className='font-dm text-sm text-[#BEBEBE] py-4 pl-5 border-b-[1px] border-[#2D2D2D] duration-300 hover:text-white hover:ml-3' itemName='Clothes'></ListItem>
+                        <ListItem className='font-dm text-sm text-[#BEBEBE] py-4 pl-5 border-b-[1px] border-[#2D2D2D] duration-300 hover:text-white hover:ml-3' itemName='Bags'></ListItem>
+                        <ListItem className='font-dm text-sm text-[#BEBEBE] py-4 pl-5 border-b-[1px] border-[#2D2D2D] duration-300 hover:text-white hover:ml-3' itemName='Home appliances'></ListItem>
+                    </List>
+                </div>
+                }
             </div>
             <div>
                 <div className='relative'>
