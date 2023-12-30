@@ -11,7 +11,8 @@ export default {
       },
       colors: {
         'primary': '#767676',
-        'secondary': '#F5F5F3'
+        'secondary': '#F5F5F3',
+        'third': '#262626'
       },
       fontFamily: {
         'dm': `'DM Sans', sans-serif`
